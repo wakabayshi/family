@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   def index
+
   end
 
   def show 
@@ -27,7 +28,7 @@ class AccountsController < ApplicationController
     @patient=Patient.find(params[:id])
     @patient.assign_attributes(params[:patient])
     if @patient.save
-      redirect_to @patient,notice "患者情報を更新しました"
+      redirect_to @patient,notice: "患者情報を更新しました"
     else
       render "edit"
     end
@@ -36,7 +37,7 @@ class AccountsController < ApplicationController
   def destroy
     @patient=Patient.find(params[:id])
     @patient.destroy
-    redirect_to :patients,notice "患者を削除しました"
+    redirect_to :patients,notice: "患者を削除しました"
   end
 
 end

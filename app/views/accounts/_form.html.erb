@@ -1,0 +1,16 @@
+<table class="attr">
+  <tr>
+    <th><%= form.label :name, "氏名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+   <tr>
+    <th><%= form.label :number, "電話番号" %></th>
+    <td><%= form.text_field :number, size: 8 %></td>
+  </tr>
+    <th>管理者</th>
+    <td>
+      <%= form.check_box :administrator %>
+      <%= form.label :administrator, "管理者" %>
+    </td>
+  </tr>
+</table>
