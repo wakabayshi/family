@@ -3,5 +3,7 @@ class Doctor < ApplicationRecord
   has_many :periods, dependent: :destroy
   has_many :logs
   has_many :accounts, through: :logs
+
+  has_secure_password
   
 end

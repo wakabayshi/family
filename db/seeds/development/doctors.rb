@@ -5,7 +5,8 @@ d1=Department.find_by(name: "外科")
   Doctor.create(
     department: Department.find_by(name: "#{dnames[idx%3]}"),
     name: "#{names[idx%3]}",
-    password: "asagao"
+    password: "asagao!",
+    password_confirmation: "asagao!"
   )
 end
 

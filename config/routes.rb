@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "top#index"
   resources :accounts
   resources :doctors
+  resource :session,only: [:create, :destroy]
 end

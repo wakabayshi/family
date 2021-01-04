@@ -1,7 +1,16 @@
+<% if current_account %>
+  <ul class="account-menu">
+    <%=current_account.name + "さん" %>
+    <%= menu_link_to "ログアウト", :session,
+          method: :delete, data: { confirm: "ログアウトしますか？"} %>
+  </ul>
+<%end%>
 <nav class ="menubar">
   <ul>
     <%= menu_link_to "TOP",:root%>
-    <%= menu_link_to "ニュース","#"%>
+    <% if current_account%>
+      <%= menu_link_to "ニュース","#"%>
+    <%end%>
   </ul>
 </nav>
 
