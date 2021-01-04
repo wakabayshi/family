@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_060844) do
+ActiveRecord::Schema.define(version: 2021_01_02_063333) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,27 +31,39 @@ ActiveRecord::Schema.define(version: 2021_01_02_060844) do
   end
 
   create_table "doctors", force: :cascade do |t|
+    t.integer "department_id", null: false
+    t.string "name"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_doctors_on_department_id"
   end
 
   create_table "logs", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.integer "doctor_id", null: false
     t.string "symptom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_logs_on_account_id"
+    t.index ["doctor_id"], name: "index_logs_on_doctor_id"
   end
 
   create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "periods", force: :cascade do |t|
+    t.integer "doctor_id"
     t.string "time"
     t.integer "maxnumber"
     t.time "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_periods_on_doctor_id"
   end
 
 end

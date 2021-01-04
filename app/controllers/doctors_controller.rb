@@ -7,35 +7,35 @@ class DoctorsController < ApplicationController
   end
 
   def new
-    @patient=Patient.new()
+    @doctor=Doctor.new()
   end
 
   def edit
-    @patient=Patient.find(params[:id])
+    @doctor=Doctor.find(params[:id])
   end
 
   def create
-    @patient=Patient.new(params[:patient])
-    if @patient.save
-      redirect_to @patient,notice: "患者を登録しました"
+    @doctor=Doctor.new(params[:patient])
+    if @doctor.save
+      redirect_to @doctor,notice: "患者を登録しました"
     else
       render "new"
     end
   end
 
   def update
-    @patient=Patient.find(params[:id])
-    @patient.assign_attributes(params[:patient])
-    if @patient.save
-      redirect_to @patient,notice "患者情報を更新しました"
+    @doctor=Doctor.find(params[:id])
+    @doctor.assign_attributes(params[:doctor])
+    if @doctor.save
+      redirect_to @doctor,notice "患者情報を更新しました"
     else
       render "edit"
     end
   end
 
   def destroy
-    @patient=Patient.find(params[:id])
-    @patient.destroy
-    redirect_to :patients,notice "患者を削除しました"
+    @doctor=Doctor.find(params[:id])
+    @doctor.destroy
+    redirect_to :doctors,notice "先生を削除しました"
   end
 end
