@@ -1,0 +1,10 @@
+<% options =[] %>
+<% Department.all.each do |department|%>
+  <%options<<department.name%>
+<%end%>
+<table class="attr">
+  <tr>
+    <th><%= form.label :time,"診察科" %></th>
+    <td><%= form.select :time,options %></td>
+  </tr>
+</table>

@@ -1,0 +1,7 @@
+<% @page_title="診察枠の予約"%>
+
+<h1><%=page_title%></h1>
+<%=form_for @period do |form|%>
+  <%=render "form", form: form%>
+  <div><%=form.submit%></div>
+<%end%>

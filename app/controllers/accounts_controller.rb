@@ -3,15 +3,16 @@ class AccountsController < ApplicationController
   def index
 
   end
-
-
+  def show
+    @account=current_account
+  end
 
   def new
     @account=Account.new()
   end
 
   def edit
-    @account=Account.find(params[:id])
+    @account=current_account
   end
 
   def create
@@ -27,7 +28,7 @@ class AccountsController < ApplicationController
     @account=Account.find(params[:id])
     @account.assign_attributes(params[:account])
     if @account.save
-      redirect_to @account,notice: "患者情報を更新しました"
+      redirect_to "/",notice: "患者情報を更新しました"
     else
       render "edit"
     end

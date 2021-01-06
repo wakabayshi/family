@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "top#index"
   resources :accounts
   resources :doctors
+  resources :periods
   resource :session,only: [:create, :destroy]
 end
