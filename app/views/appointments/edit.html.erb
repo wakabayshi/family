@@ -1,0 +1,7 @@
+<% @page_title="診察予約編集"%>
+
+<h1><%=page_title%></h1>
+<%=form_for @appointment do |form|%>
+  <%=render "form", form: form%>
+  <div><%=form.submit%></div>
+<%end%>
