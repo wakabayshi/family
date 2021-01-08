@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :accounts
   resources :doctors
   resources :periods
+  resources :appointments
   resource :session,only: [:create, :destroy]
 end

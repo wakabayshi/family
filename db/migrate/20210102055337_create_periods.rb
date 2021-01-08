@@ -4,7 +4,7 @@ class CreatePeriods < ActiveRecord::Migration[5.2]
       t.references :doctor
       t.string :time
       t.integer :maxnumber
-      t.time :date
+      t.date :date
 
       t.timestamps
     end

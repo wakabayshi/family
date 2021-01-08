@@ -3,9 +3,9 @@
 <%=link_to "患者の新規登録",:new_account%>
 <% if current_account%>
   <%=link_to "患者の編集","accounts/#{current_account.id}/edit"%>
-  <%=link_to "先生の新規登録","#"%>
+  <%=link_to "先生の新規登録","doctors/new"%>
   <%=link_to "先生の編集","#"%>
-  <%=link_to "診察枠の予約",:new_period%>
+  <%=link_to "診察枠の予約","appointments/new"%>
   <%=link_to "診察枠の編集","#"%>
   <%=link_to "予約確認","#"%>
 <%end%>
