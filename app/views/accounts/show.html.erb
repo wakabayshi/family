@@ -1,1 +1,14 @@
-<% @page_title="予約確認"%>
+<% @page_title = "会員の詳細" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "編集", [:edit, @account] %></div>
+
+
+
+<table class="attr">
+  <tr>
+    <th>氏名</th>
+    <td><%= @account.name %></td>
+  </tr>
+</table>

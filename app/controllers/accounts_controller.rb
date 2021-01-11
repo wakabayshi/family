@@ -1,18 +1,21 @@
 class AccountsController < ApplicationController
   before_action :login_required
   def index
-
+    @account=Account.order(:id)
   end
   def show
-    @account=current_account
+    @account=Account.find(params[:id])
   end
+
+
 
   def new
     @account=Account.new()
   end
 
   def edit
-    @account=current_account
+    # @account=current_account
+    @account=Account.find(params[:id])
   end
 
   def create

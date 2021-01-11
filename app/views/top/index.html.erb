@@ -5,7 +5,11 @@
   <%=link_to "患者の編集","accounts/#{current_account.id}/edit"%>
    <%=link_to "診察枠の予約","appointments/new"%>
   <%=link_to "予約確認,変更,削除","appointments"%>
-<%elsif current_doctor%>
+<%elsif current_admin%>
+  <%=link_to "患者一覧","accounts"%>
+  <%=link_to "診察枠の予約","appointments/new"%>
+  <%=link_to "予約確認,変更,削除","appointments"%>
+<%elsif current_doctor || current_admin%>
   <%=link_to "先生の新規登録","doctors/new"%>
   <%=link_to "カルテ一覧","logs"%>
 <%end%>

@@ -1,25 +1,25 @@
 <% @page_title = "会員名簿" %>
 <h1><%= @page_title %></h1>
 <%# 
-<div class="toolbar"><%= link_to "会員の新規登録", :new_member %></div> %>
+<div class="toolbar"><%= link_to "会員の新規登録", :new_member ></div>%>
 
-<% if @patients.present? %>
+<% if @account.present? %>
   <table class="list">
     <thead>
       <tr>
+        <th></th>
         <th>氏名</th>
-        <th>電話番号</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <% @patients.each do |patient| %>
+      <% @account.each do |account| %>
         <tr>
           <td style="text-align: right"></td>
-          <td><%= patient.name %></td>
-          <td><%= patient.number %></td>
+          <td><%=link_to account.name,account %></td>
           <td>
-            <%= link_to "編集", [:edit, patient] %> |
-            <%= link_to "削除", patient, method: :delete,
+            <%= link_to "編集", [:edit, account] %> |
+            <%= link_to "削除", account, method: :delete,
               data: { confirm: "本当に削除しますか?" } %>
           </td>
         </tr>
