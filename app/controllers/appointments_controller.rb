@@ -1,16 +1,23 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointment=Appointment.find_by(account:current_account)
-    @appointment=[]
-    Appointment.all.each do |appoint|
-      if appoint.account_id===current_account.id
-        @appointment.push(appoint)
-      end
-    end
+    @appointment=current_account.appointments
   end
 
   def show 
   end
+
+  def search
+
+    # current_account.departments.each do|idx|
+    #   @department.push(idx)
+    # end
+    @department=[]
+    @department=current_account.departments
+    @period=current_account.periods
+    @appointment=Appointment.search(params[:q],@department)
+    render "index"
+  end
+
 
   def new
     @appointment=Appointment.new()
@@ -23,10 +30,15 @@ class AppointmentsController < ApplicationController
     # @appointment.period=@period
     # @appointment.department=@department
     @appointment.account=current_account
-    if @appointment.save 
-      redirect_to "/",notice: "予約を完了しました"
+    @period=@appointment.period
+    if @period.number<@period.maxnumber
+      if @appointment.save 
+        redirect_to "/",notice: "予約を完了しました"
+      else
+        redirect_to "/",notice: "予約に失敗しました"
+      end
     else
-      redirect_to "/",notice: "予約に失敗しました"
+      redirect_to"/",notice: "予約上限に達しています"
     end
   end
 

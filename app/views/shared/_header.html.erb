@@ -4,12 +4,16 @@
     <%= menu_link_to "ログアウト", :session,
           method: :delete, data: { confirm: "ログアウトしますか？"} %>
   </ul>
+<%elsif current_doctor %>
+  <ul class="account-menu">
+    <%=current_doctor.name + "さん" %>
+    <%= menu_link_to "ログアウト", :session,
+          method: :delete, data: { confirm: "ログアウトしますか？"} %>
+  </ul>
 <%end%>
 <nav class ="menubar">
   <ul>
     <%= menu_link_to "TOP",:root%>
-    
-    <%= menu_link_to "ニュース","#"%>
   </ul>
 </nav>
 

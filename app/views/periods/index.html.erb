@@ -1,0 +1,28 @@
+<% @page_title = "診察状況" %>
+<h1><%= @page_title %></h1>
+
+
+<% if @period.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>時間</th>
+        <th>予約人数</th>
+        <th>上限</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @period.each do |period| %>
+        <tr>
+          <td style="text-align: right"></td>
+          <td><%= period.time %></td>
+          <td><%= period.number %></td>
+          <td><%= period.maxnumber %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>会員情報がありません。</p>
+<% end %>

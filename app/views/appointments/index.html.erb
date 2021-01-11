@@ -1,6 +1,13 @@
 <%@page_title="予約情報"%>
 <h1><%=@page_title%></h1>
 
+<%=form_tag :search_appointments,method: :get,class: "search" do%>
+  <%=text_field_tag "q",params[:q]%>
+  <%=check_box_tag :department %>診察科
+  <%=check_box_tag :period %>時間
+  <%=submit_tag "検索"%>
+<%end%>
+
 
 <% if @appointment.present?%>
   <table class="list">

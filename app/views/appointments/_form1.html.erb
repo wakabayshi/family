@@ -1,0 +1,13 @@
+<% @appointment.each do |appointment|%>
+  <tr>
+    <td style="text-align: right"></td>
+    <td><%= appointment.account.name %></td>
+    <td><%= appointment.department.name %></td>
+    <td><%= appointment.period.time %></td>
+    <td>
+      <%=link_to"編集",[:edit,appointment]%>
+      <%=link_to"削除",appointment,method: :delete,
+        data: {confirm: "本当に削除しますか？"}%>
+    </td>
+  </tr>
+<%end%>

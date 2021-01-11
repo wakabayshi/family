@@ -1,0 +1,10 @@
+<table class="attr">
+  <tr>
+    <th><%= form.label :account_id ,"診察科" %></th>
+    <td><%= form.collection_select :account_id,Account.all,:id,:name%></td>
+  </tr>
+  <tr>
+    <th><%= form.label :symptom ,"症状" %></th>
+    <td><%= form.text_field :symptom %></td>
+  </tr>
+</table>

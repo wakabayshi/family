@@ -10,3 +10,4 @@ d1=Department.find_by(name: "外科")
   )
 end
 
+

@@ -4,6 +4,7 @@ names=["Dr1","Dr2","Dr3"]
   period=Period.create(
     doctor: Doctor.find_by(name: names[idx%3]),
     time: time[idx%10],
+    number: 0,
     maxnumber: 10,
     date: "2000/#{rand(12)}/#{rand(30)}"
   )

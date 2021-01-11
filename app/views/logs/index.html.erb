@@ -1,0 +1,36 @@
+<%@page_title="予約情報"%>
+<h1><%=@page_title%></h1>
+
+<%=link_to "カルテ作成","logs/new"%>
+
+
+<% if @log.present?%>
+  <table class="list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>患者</th>
+        <th>医者</th>
+        <th>症状</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @log.each do |log|%>
+        <tr>
+          <td style="text-align: right"></td>
+          <td><%= log.account.name%></td>
+          <td><%= log.doctor.name %></td>
+          <td><%= log.symptom %></td>
+          <td>
+            <%=link_to"編集",[:edit,log]%>
+            <%=link_to"削除",log,method: :delete,
+             data: {confirm: "本当に削除しますか？"}%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>  
+  </table>
+<%else%>
+  <p>会員情報がありません</p>
+<%end%>

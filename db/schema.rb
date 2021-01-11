@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_105801) do
   create_table "periods", force: :cascade do |t|
     t.integer "doctor_id"
     t.string "time"
+    t.integer "number"
     t.integer "maxnumber"
     t.date "date"
     t.datetime "created_at", null: false
