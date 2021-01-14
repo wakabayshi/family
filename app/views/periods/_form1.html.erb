@@ -10,9 +10,7 @@
     <% periods.each do |period| %>
       <tr>
         <td><%= current_account.name %></td>
-        <% current_account.departments.each do |department|%>
-          <td><%= department.name%></td>
-        <%end%>
+        <td><%= period.departments.name%></td>
         <td><%= period.time %></td>
       </tr>
     <% end %>

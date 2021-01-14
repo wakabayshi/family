@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
   class Loginrequired < StandardError; end
   class Forbidden < StandardError; end
 
-  private def login_required
-    raise Loginrequired unless current_account || current_admin
-  end
+  # private def login_required
+  #   raise Loginrequired unless current_account || current_admin
+  # end
   a=[0,0,0,0,0,0,0,0,0,0]
     Appointment.all.each do |idx|
       0.upto(9) do |s|

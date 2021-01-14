@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  before_action :login_required
+  # before_action :login_required
   def index
     @account=Account.order(:id)
   end
