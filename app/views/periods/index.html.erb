@@ -11,6 +11,7 @@
         <th>時間</th>
         <th>予約人数</th>
         <th>上限</th>
+        <th>操作</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,11 @@
           <td><%= period.time %></td>
           <td><%= period.number %></td>
           <td><%= period.maxnumber %></td>
+           <td>
+              <%= link_to "編集", [:edit, period] %> |
+              <%= link_to "削除", period, method: :delete,
+                data: { confirm: "本当に削除しますか?" } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

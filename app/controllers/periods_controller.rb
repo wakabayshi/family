@@ -32,7 +32,7 @@ class PeriodsController < ApplicationController
   end
 
   def edit
-
+    @period=Period.find(params[:id])
   end
 
   def create
@@ -45,6 +45,13 @@ class PeriodsController < ApplicationController
   end
 
   def update
+    @period=Period.find(params[:id])
+    @period.assign_attributes(params[:period])
+    if @doctor.save
+      redirect_to "/",notice: "先生情報を更新しました"
+    else
+      render "edit"
+    end
   end
 
   def destroy
