@@ -47,8 +47,8 @@ class PeriodsController < ApplicationController
   def update
     @period=Period.find(params[:id])
     @period.assign_attributes(params[:period])
-    if @doctor.save
-      redirect_to "/",notice: "先生情報を更新しました"
+    if @period.save
+      redirect_to "/periods",notice: "診察情報を更新しました"
     else
       render "edit"
     end

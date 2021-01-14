@@ -1,6 +1,6 @@
 <table class="attr">
   <tr>
-    <th><%= form.label :time ,"診察科" %></th>
-    <td><%= form.collection_select :time,Period.all,:id,:time%></td>
+    <th><%= form.label :maxnumber ,"診察上限数" %></th>
+    <td><%= form.text_field :maxnumber%></td>
   </tr>
 </table>

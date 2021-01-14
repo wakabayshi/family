@@ -8,18 +8,22 @@ class SearchsController < ApplicationController
 
   private
   def search_for(model, content, method)
-    if model == 'department'
-      if method == 'perfect'
-        Department.where(name: content)
-      else
-        Appointment.department.where('name LIKE ?', '%'+content+'%')
+    if content.present?
+      if model == 'department'
+        if method == 'perfect'
+          Department.where(name: content)
+        else
+          Department.where('name LIKE ?', '%'+content+'%')
+        end
+      elsif model == 'period'
+        if method == 'perfect'
+          Period.where(time: content)
+        else
+          Period.where('time LIKE ?', '%'+content+'%')
+        end
       end
-    elsif model == 'period'
-      if method == 'perfect'
-        Period.where(time: content)
-      else
-        Period.where('time LIKE ?', '%'+content+'%')
-      end
+    else
+      redirect_to "/appointments"
     end
   end
 end

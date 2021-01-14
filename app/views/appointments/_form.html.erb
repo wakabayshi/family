@@ -3,8 +3,15 @@
     <th><%= form.label :department_id ,"診察科" %></th>
     <td><%= form.collection_select :department_id,Department.all,:id,:name%></td>
   </tr>
-   <tr>
-    <th><%= form.label :period_id, "時間" %></th>
-    <td><%= form.collection_select :period_id,Period.all,:id,:time%></td>
-  </tr>
+  <%if current_account.appointments.present?%>
+    <tr>
+      <th><%= form.label :period_id, "時間" %></th>
+      <td><%= form.collection_select :period_id,Period.where(before:false),:id,:time%></td>
+    </tr>
+  <%elsif%>
+    <tr>
+      <th><%= form.label :period_id, "時間" %></th>
+      <td><%= form.collection_select :period_id,Period.where(before:true),:id,:time%></td>
+    </tr>
+  <%end%>
 </table>

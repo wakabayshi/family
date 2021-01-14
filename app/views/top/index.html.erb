@@ -7,11 +7,12 @@
   <%=link_to "患者一覧","accounts"%>
   <%=link_to "診察枠一覧","periods"%>
   <%=link_to "先生一覧","doctors"%>
+  <%=link_to "先生の新規登録","doctors/new"%>
 <%elsif current_doctor || current_admin%>
   <%=link_to "先生の新規登録","doctors/new"%>
   <%=link_to "カルテ一覧","logs"%>
   <%=link_to "予約確認,変更,削除","appointments"%>
 <%else%>
-  <h1>初心の方は会員登録をしてください</h1>
+  <h1>初診の方は会員登録をしてください</h1>
 <%end%>
 

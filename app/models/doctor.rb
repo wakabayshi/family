@@ -5,5 +5,8 @@ class Doctor < ApplicationRecord
   has_many :accounts, through: :logs
 
   has_secure_password
+  validates :name, presence: true,uniqueness: true
+
+  validates :password, presence: true
   
 end

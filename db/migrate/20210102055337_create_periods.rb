@@ -5,6 +5,7 @@ class CreatePeriods < ActiveRecord::Migration[5.2]
       t.string :time
       t.integer :number
       t.integer :maxnumber
+      t.boolean :before,default: 1
       t.date :date
 
       t.timestamps

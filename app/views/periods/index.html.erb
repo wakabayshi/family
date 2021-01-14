@@ -2,6 +2,8 @@
 <h1><%= @page_title %></h1>
 
 
+<div class="toolbar"><%= link_to "予約編集", "appointments" %></div>
+
 <% if @period.present? %>
   <table class="list">
     <thead>
@@ -18,7 +20,7 @@
       <% @period.each do |period| %>
         <tr>
           <td style="text-align: right"></td>
-          <td><%= period.doctor.name%></td>
+          <td><%= period.doctor.department.name%></td>
           <td><%= period.time %></td>
           <td><%= period.number %></td>
           <td><%= period.maxnumber %></td>

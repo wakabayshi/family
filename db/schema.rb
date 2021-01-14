@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_130903) do
     t.string "time"
     t.integer "number"
     t.integer "maxnumber"
+    t.boolean "before", default: true
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

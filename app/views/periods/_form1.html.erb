@@ -10,7 +10,7 @@
     <% periods.each do |period| %>
       <tr>
         <td><%= current_account.name %></td>
-        <td><%= period.departments.name%></td>
+        <td><%= period.doctor.department.name%></td>
         <td><%= period.time %></td>
       </tr>
     <% end %>

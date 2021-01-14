@@ -4,6 +4,8 @@ class AppointmentsController < ApplicationController
       @appointment=current_account.appointments
     elsif current_doctor
       @appointment=current_doctor.department.appointments
+    elsif current_admin
+      @appointment=Appointment.order(:id)
     end
   end
 

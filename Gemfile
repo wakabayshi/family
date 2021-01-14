@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 group :development, :test do
   gem 'sqlite3'
 end
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use postgress for the production mode
 gem 'pg', group: :production
 # Use Puma as the app server

@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   #   raise Loginrequired unless current_account || current_admin
   # end
   a=[0,0,0,0,0,0,0,0,0,0]
+  
     Appointment.all.each do |idx|
       0.upto(9) do |s|
         if idx.period_id===s+1
