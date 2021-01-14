@@ -1,16 +1,17 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-<%=link_to "患者の新規登録",:new_account%>
+
 <% if current_account%>
   <%=link_to "患者の編集","accounts/#{current_account.id}/edit"%>
    <%=link_to "診察枠の予約","appointments/new"%>
   <%=link_to "予約確認,変更,削除","appointments"%>
 <%elsif current_admin%>
   <%=link_to "患者一覧","accounts"%>
-  <%=link_to "診察枠の予約","appointments/new"%>
-  <%=link_to "予約確認,変更,削除","appointments"%>
+  <%=link_to "診察枠一覧","periods"%>
+  <%=link_to "先生一覧","doctors"%>
 <%elsif current_doctor || current_admin%>
   <%=link_to "先生の新規登録","doctors/new"%>
   <%=link_to "カルテ一覧","logs"%>
+  <%=link_to "予約確認,変更,削除","appointments"%>
+<%else%>
+  <h1>初心の方は会員登録をしてください</h1>
 <%end%>
 

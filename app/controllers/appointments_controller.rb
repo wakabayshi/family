@@ -1,22 +1,26 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointment=current_account.appointments
+    if current_account
+      @appointment=current_account.appointments
+    elsif current_doctor
+      @appointment=current_doctor.department.appointments
+    end
   end
 
   def show 
   end
 
-  def search
+  # def search
 
-    # current_account.departments.each do|idx|
-    #   @department.push(idx)
-    # end
-    @department=[]
-    @department=current_account.departments
-    @period=current_account.periods
-    @appointment=Appointment.search(params[:q],@department)
-    render "index"
-  end
+  #   # current_account.departments.each do|idx|
+  #   #   @department.push(idx)
+  #   # end
+  #   @apoint=current_account.appointments
+  #   @department=current_account.departments
+  #   @period=current_account.periods
+  #   @appointment=Appointment.search(params[:q],@department)
+  #   render "_form2"
+  # end
 
 
   def new

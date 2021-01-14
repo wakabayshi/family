@@ -13,7 +13,6 @@ class LogsController < ApplicationController
   def create
     @log=Log.create(log_params)
     @log.doctor=current_doctor
-    if 
     if @log.save
       redirect_to "/",notice:"カルテを作成しました"
     else

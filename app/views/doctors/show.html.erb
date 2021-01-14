@@ -1,0 +1,19 @@
+<% @page_title = "医者の詳細" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "編集", [:edit, @doctor] %></div>
+
+
+
+<table class="attr">
+  <tr>
+    <th>氏名</th>
+    <td><%= @doctor.name %></td>
+  </tr>
+   <tr>
+    <th>診察科</th>
+    <td><%= @doctor.department.name %></td>
+  </tr>
+  
+</table>

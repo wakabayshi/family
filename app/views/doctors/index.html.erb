@@ -1,0 +1,31 @@
+<% @page_title = "医者名簿" %>
+<h1><%= @page_title %></h1>
+<%# 
+<div class="toolbar"><%= link_to "会員の新規登録", :new_member ></div>%>
+
+<% if @doctor.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>氏名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctor.each do |doctor| %>
+        <tr>
+          <td style="text-align: right"></td>
+          <td><%=link_to doctor.name,doctor %></td>
+          <td>
+            <%= link_to "編集", [:edit, doctor] %> |
+            <%= link_to "削除", doctor, method: :delete,
+              data: { confirm: "本当に削除しますか?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>会員情報がありません。</p>
+<% end %>

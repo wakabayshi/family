@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   resources :accounts 
   resources :doctors
   resources :periods
-  resources :appointments do
-    get "search", on: :collection
-  end
+  resources :appointments 
   resource :session,only: [:create, :destroy]
   resources :logs
+  get '/search', to: 'searchs#search'
 end

@@ -1,0 +1,21 @@
+<table class="list">
+    <thead>
+        <tr>
+            <th>氏名</th>
+            <th>診察科</th>
+            <th>時間</th>
+       
+        </tr>
+    </thead>
+    <tbody id="post">
+    <% departments.each do |department| %>
+      <tr>
+        <td><%= current_account.name %></td>
+        <td><%= department.name %></td>
+        <%department.periods.each do |period| %>
+          <td><%= period.time %></td>
+        <%end%>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

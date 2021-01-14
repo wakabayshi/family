@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    
+    @doctor=Doctor.order(:id)
   end
 
   def show 

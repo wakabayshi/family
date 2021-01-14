@@ -1,0 +1,7 @@
+<% if @model == 'department' %>
+  <h3>検索ワード：<%= @content %></h3>
+  <%= render 'departments/form1', departments: @records %>
+<% else @model == 'period' %>
+  <h3>検索ワード：<%= @content %></h3>
+    <%= render 'periods/form1', periods: @records %>
+<% end %>

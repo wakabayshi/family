@@ -1,0 +1,44 @@
+<%@page_title="予約情報"%>
+<h1><%=@page_title%></h1>
+
+<%=form_tag :search_appointments,method: :get,class: "search" do%>
+  <%=text_field_tag "q",params[:q]%>
+  <%=check_box_tag :department %>診察科
+  <%=check_box_tag :period %>時間
+  <%=submit_tag "検索"%>
+<%end%>
+
+
+<% if @appointment.present?%>
+  <table class="list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>氏名</th>
+        <th>診察科</th>
+        <th>時間</th>
+        <%# <th>操作</th> %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @appointment.each do |appointment|%>
+        <tr>
+          <td style="text-align: right"></td>
+          <td><%=current_account.name%></td>
+          <td><%= appointment.name%></td>
+          <td><%=current_account.periods%></td>
+
+
+
+          <%# <td>
+            <%=link_to"編集",[:edit,appointment]%>
+            <%# <%=link_to"削除",appointment,method: :delete,
+             data: {confirm: "本当に削除しますか？"}%>
+          <%# </td> %> 
+        </tr>
+      <%end%>
+    </tbody>  
+  </table>
+<%else%>
+  <p>会員情報がありません</p>
+<%end%>

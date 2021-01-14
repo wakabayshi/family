@@ -1,0 +1,21 @@
+<table class="list">
+    <thead>
+        <tr>
+            <th>投稿者名</th>
+            <th>タイトル</th>
+            <th>本文</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="post">
+    <% periods.all.each do |period| %>
+      <tr>
+        <td><%= periods.account.name %></td>
+        <td><%= periods.department.name %></td>
+        <td><%= periods.time %></td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

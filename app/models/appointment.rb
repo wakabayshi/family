@@ -12,12 +12,14 @@ class Appointment < ApplicationRecord
 
   validates :account,uniqueness:{scope: :period}
 
-  class << self
-    def search(query,rel)
-      if query.present?
-        rel = rel.where("name LIKE ?","%#{query}%")
-      end
-      rel
-    end
-  end
+  # class << self
+  #   def search(query,rel)
+  #     if query.present?
+  #       Appointment.all.each do |appointment|
+  #         rel = Appointment.where("#{appointment.department.name} LIKE ?","%#{query}%")
+  #       end
+  #     end
+  #     rel
+  #   end
+  # end
 end
