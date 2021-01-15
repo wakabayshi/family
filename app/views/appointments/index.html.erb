@@ -17,7 +17,9 @@
         <th>氏名</th>
         <th>診察科</th>
         <th>時間</th>
-        <th>操作</th>
+        <% if not current_doctor%>
+          <th>操作</th>
+        <%end%>
       </tr>
     </thead>
     <tbody>
@@ -27,11 +29,13 @@
           <td><%= appointment.account.name %></td>
           <td><%= appointment.department.name %></td>
           <td><%= appointment.period.time %></td>
-          <td>
+          <% if not current_doctor%>
+           <td>
             <%=link_to"編集",[:edit,appointment]%>
             <%=link_to"削除",appointment,method: :delete,
              data: {confirm: "本当に削除しますか？"}%>
           </td>
+        <%end%>
         </tr>
       <%end%>
     </tbody>  

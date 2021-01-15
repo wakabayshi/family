@@ -26,11 +26,11 @@ class DoctorsController < ApplicationController
 
   def update
     @doctor=Doctor.find(params[:id])
-    @doctor.assign_attributes(params[:doctor])
+    @doctor.assign_attributes(doctor_params)
     if @doctor.save
       redirect_to "/",notice: "先生情報を更新しました"
     else
-      render "edit"
+      redirect_to "/doctors",notice:"更新に失敗しました"
     end
   end
 
@@ -42,5 +42,8 @@ class DoctorsController < ApplicationController
   private
   def doctor_params  #ストロングパラメータを定義していく
     params.require(:doctor).permit(:name,:password,:department_id) #requireメソッドとpermitメソッドを利用
+  end
+  def doctor_params2  #ストロングパラメータを定義していく
+    params.require(:doctor).permit(:name,:department_id) #requireメソッドとpermitメソッドを利用
   end
 end

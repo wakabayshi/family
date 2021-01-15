@@ -16,7 +16,7 @@ class LogsController < ApplicationController
     if @log.save
       redirect_to "/",notice:"カルテを作成しました"
     else
-      redirect_to "/",notice:"作成に失敗しました"
+      render "new",notice:"作成に失敗しました"
     end
   end
 

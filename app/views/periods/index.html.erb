@@ -25,9 +25,7 @@
           <td><%= period.number %></td>
           <td><%= period.maxnumber %></td>
            <td>
-              <%= link_to "編集", [:edit, period] %> |
-              <%= link_to "削除", period, method: :delete,
-                data: { confirm: "本当に削除しますか?" } %>
+              <%= link_to "編集", [:edit, period] %> 
           </td>
         </tr>
       <% end %>
