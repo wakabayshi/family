@@ -11,7 +11,7 @@ d1=Date.new(2020,1,18)
     date: d1
   )
   if idx%10==0 || idx%10==1
-    period.date=d1+
+    period.date=d1
     period.save
   elsif idx%10==2|| idx%10==3
     period.date=d1+1
