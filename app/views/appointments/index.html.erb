@@ -17,6 +17,7 @@
         <th>氏名</th>
         <th>診察科</th>
         <th>時間</th>
+        <th>日付</th>
         <% if not current_doctor%>
           <th>操作</th>
         <%end%>
@@ -29,6 +30,7 @@
           <td><%= appointment.account.name %></td>
           <td><%= appointment.department.name %></td>
           <td><%= appointment.period.time %></td>
+          <td><%= appointment.period.date %></td>
           <% if not current_doctor%>
            <td>
             <%=link_to"編集",[:edit,appointment]%>

@@ -22,4 +22,6 @@ class Appointment < ApplicationRecord
   #     rel
   #   end
   # end
+  
 end
+
