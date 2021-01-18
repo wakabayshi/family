@@ -3,16 +3,29 @@
         <tr>
             <th>氏名</th>
             <th>診察科</th>
-            <%# <th>時間</th> %>
+            <th>時間 || 日付</th>
        
         </tr>
     </thead>
     <tbody id="post">
+    <%d=[]%>
+    <% current_account.appointments.each do |app| %>
+      <%d.push(app.period)%>
+    <%end%>
+    <%q=[]%>
+    <%d.each do |idx|%>
+      <%q<<idx.time%>
+    <%end%>
     <% departments.each do |department| %>
       <tr>
         <td><%= current_account.name %></td>
         <td><%= department.name %></td>
-        <%# <td><%= department.doctors.name%></td>
+        <td><%current_account.appointments.each do |idx|%>
+              <%if idx.department_id==department.id%>
+                <%="#{idx.period.time}||#{idx.period.date}"%>
+              <%end%>   
+            <%end%>
+        </td>
       </tr>
     <% end %>
     </tbody>

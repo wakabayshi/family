@@ -5,5 +5,5 @@
 <h1><%=page_title%></h1>
 <%=form_for @account do |form|%>
   <%=render "form1", form: form%>
-  <div><%=form.submit%></div>
+  <div><%=form.submit "登録"%></div>
 <%end%>

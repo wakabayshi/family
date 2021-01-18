@@ -74,8 +74,8 @@ aside#sidebar {
 
 /* ヘッダー */
 header {
-  border-top: 4px solid #6bb;
-  padding-top: 4px;
+  border-top: 10px solid black;
+  padding-top: 1px;
 }
 
 ul.account-menu {
@@ -88,7 +88,7 @@ footer {
   font: 11px Verdana;
   color: #888;
   padding: 8px 0;
-  border-top: 4px solid #6bb;
+  border-top: 4px solid black;
   text-align: center;
 }
 
@@ -104,7 +104,7 @@ nav.menubar {
   background-color: #000;
   color: #ccc;
   font-size: 80%;
-  padding: 8px 16px;
+  padding: 8px 10px;
 }
 
 nav.menubar ul li:not(:last-child):after {

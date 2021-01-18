@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_11_130903) do
+ActiveRecord::Schema.define(version: 2021_01_16_040232) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2021_01_11_130903) do
     t.index ["account_id"], name: "index_appointments_on_account_id"
     t.index ["department_id"], name: "index_appointments_on_department_id"
     t.index ["period_id"], name: "index_appointments_on_period_id"
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.integer "period_id"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["period_id"], name: "index_days_on_period_id"
   end
 
   create_table "departments", force: :cascade do |t|

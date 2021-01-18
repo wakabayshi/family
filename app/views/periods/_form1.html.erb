@@ -4,6 +4,7 @@
             <th>氏名</th>
             <th>診察科</th>
             <th>時間</th>
+            <th>日付</th>
         </tr>
     </thead>
     <tbody id="post">
@@ -12,6 +13,7 @@
         <td><%= current_account.name %></td>
         <td><%= period.doctor.department.name%></td>
         <td><%= period.time %></td>
+        <td><%= period.date %></td>
       </tr>
     <% end %>
     </tbody>

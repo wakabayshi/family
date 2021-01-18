@@ -2,7 +2,7 @@
 <h1><%= @page_title %></h1>
 
 
-<div class="toolbar"><%= link_to "予約編集", "appointments" %></div>
+<div class="toolbar"><%= link_to "予約一覧", "appointments" %></div>
 
 <% if @period.present? %>
   <table class="list">
@@ -11,6 +11,7 @@
         <th></th>
         <th>担当医</th>
         <th>時間</th>
+        <th>日付</th>
         <th>予約人数</th>
         <th>上限</th>
         <th>操作</th>
@@ -22,6 +23,7 @@
           <td style="text-align: right"></td>
           <td><%= period.doctor.department.name%></td>
           <td><%= period.time %></td>
+          <td><%= period.date %></td>
           <td><%= period.number %></td>
           <td><%= period.maxnumber %></td>
            <td>

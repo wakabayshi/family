@@ -4,7 +4,6 @@
 <%= form_tag(search_path, method: :get) do %>
   <%= text_field_tag 'content' if current_account %>
   <%= select_tag 'model', options_for_select({ "診察科" => "department", "時間" => "period" }) if current_account %>
-  <%= select_tag 'method', options_for_select({ "完全一致" => "perfect", "部分一致" => "partial" }) if current_account %>
   <%= submit_tag '検索' if current_account %>
 <% end %>
 

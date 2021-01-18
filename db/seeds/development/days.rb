@@ -2,15 +2,10 @@ time=%w(月曜午前 月曜午後 火曜午前 火曜午後 水曜午前 水曜�
 names=["Dr1","Dr2","Dr3"]
 d1=Date.new(2020,1,18)
 0.upto(29) do |idx|
-  day=Period.create(
-    doctor: Doctor.find_by(name: names[idx%3]),
-    time: time[idx%10],
-    number: 0,
-    maxnumber: 10,
-    before: (idx%2==0),
-    date: d1
+  day=Day.create(
+    date:d1
   )
- # 1周目
+  # 1周目
   if idx==0 || idx==1
     day.date=d1
     day.save
@@ -26,7 +21,7 @@ d1=Date.new(2020,1,18)
   elsif idx==8||idx==9
     day.date=d1+4
     day.save
-  #2周目  
+ #2周目  
   elsif idx==10||idx==11
     day.date=d1+7
     day.save

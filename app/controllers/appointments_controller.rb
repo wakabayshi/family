@@ -29,6 +29,14 @@ class AppointmentsController < ApplicationController
     @appointment=Appointment.new()
   end
 
+  def new2
+    @appointment=Appointment.new()
+  end
+
+  def new3
+    @appointment=Appointment.new()
+  end
+
   def create
     @appointment=Appointment.new(appointment_params)
     # @period=Period.find_by(params[:period])
@@ -49,6 +57,12 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    @appointment=Appointment.find(params[:id])
+  end
+  def edit2
+    @appointment=Appointment.find(params[:id])
+  end
+  def edit3
     @appointment=Appointment.find(params[:id])
   end
   

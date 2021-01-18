@@ -20,17 +20,17 @@ class ApplicationController < ActionController::Base
   # private def login_required
   #   raise Loginrequired unless current_account || current_admin
   # end
-  a=[0,0,0,0,0,0,0,0,0,0]
+  a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
   
     Appointment.all.each do |idx|
-      0.upto(9) do |s|
+      0.upto(29) do |s|
         if idx.period_id===s+1
           a[s]+=1
         end
       end
     end
     Appointment.all.each do |idx|
-      1.upto(10) do |s|
+      1.upto(30) do |s|
         period=Period.find(s)
         number=period.number
         if idx.period_id===s

@@ -1,5 +1,6 @@
-<h5>1/18~1/22</h5>
-<%=link_to "1/25~1/30>>","/appointments/new2"%>
+<h5>1/25~1/30</h5>
+<%=link_to "<<1/18~1/23","new"%>
+<%=link_to "2/1~2/5>>","new3"%>
 <table class="attr">
   <tr>
     <th><%= form.label :department_id ,"診察科" %></th>
@@ -8,12 +9,12 @@
   <%if current_account.appointments.present?%>
     <tr>
       <th><%= form.label :period_id, "時間" %></th>
-      <td><%= form.collection_select :period_id,Period.where(id:1..10).where(before:false),:id,:time%></td>
+      <td><%= form.collection_select :period_id,Period.where(id:11..20).where(before:false),:id,:time%></td>
     </tr>
   <%elsif%>
     <tr>
       <th><%= form.label :period_id, "時間" %></th>
-      <td><%= form.collection_select :period_id,Period.where(id:1..10).where(before:true),:id,:time%></td>
+      <td><%= form.collection_select :period_id,Period.where(id:11..20).where(before:true),:id,:time%></td>
     </tr>
   <%end%>
 </table>

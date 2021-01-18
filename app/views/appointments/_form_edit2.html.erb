@@ -1,0 +1,27 @@
+<h5>1/25~1/30</h5>
+<%=link_to "<<1/18~1/23","/appointments/#{params[:id]}/edit"%>
+<%=link_to "2/1~2/5>>","/appointments/#{params[:id]}/edit3"%>
+<table class="attr">
+  <tr>
+    <th><%= form.label :department_id ,"診察科" %></th>
+    <td><%= form.collection_select :department_id,Department.all,:id,:name%></td>
+  </tr>
+  <%if current_admin%>
+    <tr>
+      <th><%= form.label :period_id, "時間" %></th>
+      <td><%= form.collection_select :period_id,Period.where(id:11..20),:id,:time%></td>
+    </tr>
+  <%else%>
+    <%if current_account.appointments.present?%>
+      <tr>
+        <th><%= form.label :period_id, "時間" %></th>
+        <td><%= form.collection_select :period_id,Period.where(id:11..20).where(before:false),:id,:time%></td>
+      </tr>
+    <%else not current_account.appointments.present?%>
+      <tr>
+        <th><%= form.label :period_id, "時間" %></th>
+        <td><%= form.collection_select :period_id,Period.where(id:11..20).where(before:true),:id,:time%></td>
+      </tr>
+    <%end%>
+  <%end%>
+</table>
