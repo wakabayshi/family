@@ -1,5 +1,5 @@
-<h5>1/25~1/29</h5>
-<%=link_to "2/1~2/5>>","/appointments/new2"%>
+<h5><%="#{Period.find(1).date}~#{Period.find(10).date}"%></h5>
+<%=link_to "#{Period.find(11).date}~#{Period.find(20).date}>>","/appointments/new2"%>
 <table class="attr">
   <tr>
     <th><%= form.label :department_id ,"診察科" %></th>

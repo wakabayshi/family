@@ -1,6 +1,6 @@
 time=%w(月曜午前 月曜午後 火曜午前 火曜午後 水曜午前 水曜午後 木曜午前 木曜午後 金曜午前 金曜午後)
 names=["Dr1","Dr2","Dr3"]
-d1=Date.new(2020,1,25)
+d1=Date.today.next_occurring(:monday)
 0.upto(29) do |idx|
   day=Period.create(
     doctor: Doctor.find_by(name: names[idx%3]),
