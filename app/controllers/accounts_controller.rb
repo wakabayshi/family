@@ -40,7 +40,7 @@ class AccountsController < ApplicationController
   def destroy
     @account=Account.find(params[:id])
     @account.destroy
-    redirect_to :accounts,notice: "患者を削除しました"
+    redirect_to "/",notice: "患者を削除しました"
   end
 
 end
